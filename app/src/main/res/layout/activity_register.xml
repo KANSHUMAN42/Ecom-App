@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgl"
+    tools:context=".loginRegister.Register">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textSize="24dp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:id="@+id/tvrname"
+        android:hint="Name"
+        android:textSize="16dp"
+        android:textAlignment="textStart"
+        android:background="@drawable/textviewborder"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="150dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:id="@+id/tvremail"
+        android:hint="Email"
+        android:textSize="16dp"
+        android:textAlignment="textStart"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/textviewborder"
+        android:textStyle="bold"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="220dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:id="@+id/tvrpassword"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textSize="16dp"
+        android:textAlignment="textStart"
+        android:background="@drawable/textviewborder"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="290dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:id="@+id/tvrconfirmp"
+        android:hint="Confirm Password"
+        android:textSize="16dp"
+        android:textAlignment="textStart"
+        android:background="@drawable/textviewborder"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="360dp"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/btnrregister"
+        android:background="@drawable/bbgback"
+        android:layout_marginTop="440dp"
+        android:text="@string/register"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        />
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/iconapp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="560dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/btnrlogin"
+        android:layout_below="@id/btnrregister"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="120dp"
+        android:background="@color/bgl"
+        android:text="Already a member!!Login here"/>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/electronics"
+            android:icon="@drawable/ic_baseline_mobile_friendly_24"
+            android:title="Electronics" />
+        <item
+            android:id="@+id/Fashion"
+            android:icon="@drawable/ic_fas2"
+            android:title="Fashion" />
+        <item
+            android:id="@+id/Furniture"
+            android:icon="@drawable/ic_furniture"
+            android:title="Furniture" />
+        <item
+            android:id="@+id/Television"
+            android:icon="@drawable/ic_television"
+            android:title="Televison" />
+        <item
+            android:id="@+id/Toys"
+            android:icon="@drawable/ic_toys"
+            android:title="Toys" />
+        <item
+            android:id="@+id/Beauty"
+            android:icon="@drawable/ic_beauty"
+            android:title="Beauty" />
+        <item
+            android:id="@+id/Sports"
+            android:icon="@drawable/ic_gym"
+            android:title="Sports and Gym" />
+        <item
+            android:id="@+id/Books"
+            android:icon="@drawable/ic_books"
+            android:title="Books" />
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/Bus"
+            android:icon="@drawable/ic_bus"
+            android:title="Bus Tickets" />
+        <item
+            android:id="@+id/Train"
+            android:icon="@drawable/ic_train"
+            android:title="Train" />
+        <item
+            android:id="@+id/Flight"
+            android:icon="@drawable/ic_flight"
+            android:title="Flight" />
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/Mycart"
+            android:icon="@drawable/ic_cart"
+            android:title="My cart" />
+
+        <item
+            android:id="@+id/Mywidhlist"
+            android:icon="@drawable/ic_heart"
+            android:title="My wishlist" />
+
+
+        <item
+            android:id="@+id/account"
+            android:icon="@drawable/ic_account"
+            android:title="Account" />
+
+
+        <item
+            android:id="@+id/history"
+            android:icon="@drawable/ic_history"
+            android:title="History" />
+
+
+    </group>
+</menu>

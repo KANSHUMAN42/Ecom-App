@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgl"
+    tools:context=".loginRegister.Login">
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/iconapp"
+        android:id="@+id/imglapp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="80dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imglapp"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:text="Ecomm App"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:id="@+id/tvlemail"
+        android:hint="Email"
+        android:textSize="16dp"
+        android:textAlignment="textStart"
+        android:background="@drawable/textviewborder"
+        android:textStyle="bold"
+        android:layout_marginLeft="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="255dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:id="@+id/tvlpassword"
+        android:background="@drawable/textviewborder"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="335dp"
+        />
+
+    <Button
+        android:id="@+id/btnlogin"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bbgback"
+        android:text="@string/login" />
+<com.google.android.material.checkbox.MaterialCheckBox
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="387dp"
+    android:layout_marginLeft="45dp"
+    android:id="@+id/check"
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:id="@+id/remme"
+        android:background="@drawable/textviewborder"
+        android:text="Remember me"
+        android:layout_toRightOf="@id/check"
+        android:layout_marginTop="390dp"
+        android:layout_marginLeft="2dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="Admin login?"
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/textviewborder"
+        android:layout_below="@id/btnlregister"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="15dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/btnlregister"
+        android:background="@drawable/bbgback"
+        android:layout_marginTop="520dp"
+        android:text="New User?? Sign up here!!"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:id="@+id/progressbar"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        android:layout_below="@id/btnlregister"
+        android:layout_marginTop="30dp"/>
+</RelativeLayout>
