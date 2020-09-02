@@ -20,10 +20,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
-Button btnregister,btnlogin;
+Button btnregister,btnlogin,btnadminlogin;
     private FirebaseAuth mAuth;
     EditText tvemail,tvlpassword;
     ProgressBar Progressbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +35,19 @@ Button btnregister,btnlogin;
        tvemail=findViewById(R.id.tvlemail);
        tvlpassword=findViewById(R.id.tvlpassword);
        Progressbar=findViewById(R.id.progressbar);
-
+       btnadminlogin=findViewById(R.id.btnadminlogin);
         btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getApplicationContext(),Register.class);
                 startActivity(i);
+            }
+        });
+        btnadminlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btnlogin.setText("Admin Login");
+                verifyadminlogin();
             }
         });
         mAuth = FirebaseAuth.getInstance();
@@ -89,6 +97,9 @@ Button btnregister,btnlogin;
     }
 
     });
+
+    }
+    public void verifyadminlogin(){
 
     }
 }

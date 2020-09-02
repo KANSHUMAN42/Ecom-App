@@ -84,6 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:text="Admin login?"
+        android:id="@+id/btnadminlogin"
         android:textColor="@color/colorPrimary"
         android:background="@drawable/textviewborder"
         android:layout_below="@id/btnlregister"
