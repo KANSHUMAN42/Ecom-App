@@ -16,4 +16,9 @@
     <string name="register">register</string>
     <string name="minimum_password">min length of password is 6</string>
     <string name="auth_failed">signin failed</string>
+    <string name="title_activity_admin">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="Admin_login">Admin Login</string>
 </resources>

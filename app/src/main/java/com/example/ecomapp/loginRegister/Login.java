@@ -1,5 +1,6 @@
 package com.example.ecomapp.loginRegister;
 
+import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -18,14 +19,18 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class Login extends AppCompatActivity {
 Button btnregister,btnlogin,btnadminlogin;
-    private FirebaseAuth mAuth;
     EditText tvemail,tvlpassword;
     ProgressBar Progressbar;
 
-
+    static boolean isuser=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,21 +51,24 @@ Button btnregister,btnlogin,btnadminlogin;
         btnadminlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btnlogin.setText("Admin Login");
-                verifyadminlogin();
+                if(isuser) {
+                    btnlogin.setText(R.string.Admin_login);
+                    btnadminlogin.setText("User?");
+                    isuser=false;
+                }else{
+                    btnlogin.setText("Users Login");
+                    btnadminlogin.setText("Admin?");
+                    isuser=true;
+                }
             }
         });
-        mAuth = FirebaseAuth.getInstance();
-        if (mAuth.getCurrentUser() != null) {
-            startActivity(new Intent(Login.this, MainActivity.class));
-            finish();
-        }
+
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email=tvemail.getText().toString();
-                final String password= tvlpassword.getText().toString();
-                if(TextUtils.isEmpty(email)){
+                String Number=tvemail.getText().toString().trim();
+                final String password= tvlpassword.getText().toString().trim();
+                if(TextUtils.isEmpty(Number)){
                     Toast.makeText(getApplicationContext(),"Enter Email",Toast.LENGTH_SHORT).show();
                     return ;
                 }
@@ -68,38 +76,77 @@ Button btnregister,btnlogin,btnadminlogin;
                     Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Progressbar.setVisibility(View.VISIBLE);
-                mAuth.signInWithEmailAndPassword(email,password)
-                        .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                // If sign in fails, display a message to the user. If sign in succeeds
-                                // the auth state listener will be notified and logic to handle the
-                                // signed in user can be handled in the listener.
-                                Progressbar.setVisibility(View.GONE);
-                                if (!task.isSuccessful()) {
-                                    // there was an error
-                                    if (password.length() < 6) {
-                                        tvlpassword.setError(getString(R.string.minimum_password));
-                                    } else {
-                                        Toast.makeText(Login.this, getString(R.string.auth_failed),
-                                                Toast.LENGTH_LONG).show();
-                                    }
-                                } else {
-                                    Intent intent = new Intent(Login.this, MainActivity.class);
-                                    startActivity(intent);
-                                    finish();
-                                }
-            }
-
-        });
+                if(isuser){
+                    Progressbar.setVisibility(View.VISIBLE);
+                    verifyuserlogin( Number,password );
+                }else{
+                    Progressbar.setVisibility(View.VISIBLE);
+                    verifyadminlogin(Number,password);
+                }
 
     }
+            public void verifyadminlogin(final String Number, final String pass){
+
+                Query checkuser= FirebaseDatabase.getInstance().getReference("Admins").orderByChild("number").equalTo(Number);
+                checkuser.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.exists()){
+                            tvemail.setError(null);
+                            String givenpassword=snapshot.child(pass).child("password").getValue(String.class);
+
+                            assert givenpassword != null;
+                            if(givenpassword.equals(pass)) {
+                                tvlpassword.setError(null);
+                                Intent i =new Intent(getApplicationContext(),MainActivity.class);
+                                startActivity(i);
+
+                            }
+                        }
+                        else{
+                            Toast.makeText(Login.this,"password doesnt match",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(Login.this,error.getMessage(),Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+            public void verifyuserlogin(final String Number, final String pass){
+
+
+                Query checkuser= FirebaseDatabase.getInstance().getReference("users").orderByChild("number").equalTo(Number);
+                checkuser.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.exists()){
+                            tvemail.setError(null);
+                            // tvemail.setErrorEnabled(false);
+                            String givenpassword=snapshot.child(pass).child("password").getValue(String.class);
+
+                            if(givenpassword.equals(pass)) {
+
+                                Intent i =new Intent(getApplicationContext(),MainActivity.class);
+                                startActivity(i);
+                            }
+                        }
+                        else{
+                            Toast.makeText(Login.this,"password doesnt match",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(Login.this,error.getMessage(),Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
 
     });
 
     }
-    public void verifyadminlogin(){
 
-    }
 }
