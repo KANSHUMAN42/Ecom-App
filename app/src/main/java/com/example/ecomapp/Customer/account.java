@@ -1,21 +1,28 @@
-package com.example.ecomapp.ui;
+package com.example.ecomapp.Customer;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.ecomapp.R;
+import com.example.ecomapp.loginRegister.Login;
+import com.google.firebase.auth.FirebaseAuth;
+
+import io.paperdb.Paper;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Fashion#newInstance} factory method to
+ * Use the {@link account#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fashion extends Fragment {
+public class account extends Fragment {
+    Button btn;
+    private FirebaseAuth mauth;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +33,7 @@ public class Fashion extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Fashion() {
+    public account() {
         // Required empty public constructor
     }
 
@@ -36,11 +43,11 @@ public class Fashion extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Fashion.
+     * @return A new instance of fragment account.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fashion newInstance(String param1, String param2) {
-        Fashion fragment = new Fashion();
+    public static account newInstance(String param1, String param2) {
+        account fragment = new account();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -54,13 +61,30 @@ public class Fashion extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             final Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fashion, container, false);
+
+        View rootview = inflater.inflate(R.layout.fragment_account, container, false);
+        btn = (Button) rootview.findViewById(R.id.btnsignout);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Paper.book().destroy();
+
+                Intent i=new Intent(getActivity(), Login.class);
+                startActivity(i);
+
+            }
+        });
+        return rootview;
     }
+
+
+
 }

@@ -1,4 +1,4 @@
-package com.example.ecomapp.ui;
+package com.example.ecomapp;
 
 import android.os.Bundle;
 
@@ -8,14 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.ecomapp.R;
-
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link char_history#newInstance} factory method to
+ * Use the {@link admin_message#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class char_history extends Fragment {
+public class admin_message extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +24,7 @@ public class char_history extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public char_history() {
+    public admin_message() {
         // Required empty public constructor
     }
 
@@ -36,11 +34,11 @@ public class char_history extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment char_history.
+     * @return A new instance of fragment admin_message.
      */
     // TODO: Rename and change types and number of parameters
-    public static char_history newInstance(String param1, String param2) {
-        char_history fragment = new char_history();
+    public static admin_message newInstance(String param1, String param2) {
+        admin_message fragment = new admin_message();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +59,6 @@ public class char_history extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_char_history, container, false);
+        return inflater.inflate(R.layout.fragment_admin_message,container, false);
     }
 }

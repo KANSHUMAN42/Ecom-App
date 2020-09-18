@@ -1,4 +1,4 @@
-package com.example.ecomapp.ui;
+package com.example.ecomapp.Customer;
 
 import android.os.Bundle;
 

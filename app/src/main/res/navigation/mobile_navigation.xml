@@ -7,62 +7,62 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.ecomapp.ui.home.HomeFragment"
+        android:name="com.example.ecomapp.Customer.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/electronics"
-        android:name="com.example.ecomapp.ui.Electronics"
+        android:name="com.example.ecomapp.Customer.Electronics"
         android:label="Electronics"
         tools:layout="@layout/fragment_electronics" />
     <fragment
         android:id="@+id/Fashion"
-        android:name="com.example.ecomapp.ui.Fashion"
+        android:name="com.example.ecomapp.Customer.Fashion"
         android:label="Fashion"
         tools:layout="@layout/fragment_fashion" />
     <fragment
         android:id="@+id/Television"
-        android:name="com.example.ecomapp.ui.Television"
+        android:name="com.example.ecomapp.Customer.Television"
         android:label="Television"
         tools:layout="@layout/fragment_television" />
     <fragment
         android:id="@+id/Furniture"
-        android:name="com.example.ecomapp.ui.Furniture"
+        android:name="com.example.ecomapp.Customer.Furniture"
         android:label="Furniture"
         tools:layout="@layout/fragment_furniture" />
     <fragment
         android:id="@+id/Toys"
-        android:name="com.example.ecomapp.ui.Toys"
+        android:name="com.example.ecomapp.Customer.Toys"
         android:label="Toys"
         tools:layout="@layout/fragment_toys" />
     <fragment
         android:id="@+id/Beauty"
-        android:name="com.example.ecomapp.ui.Beauty"
+        android:name="com.example.ecomapp.Customer.Beauty"
         android:label="Beauty"
         tools:layout="@layout/fragment_beauty" />
     <fragment
         android:id="@+id/Sports"
-        android:name="com.example.ecomapp.ui.sports"
+        android:name="com.example.ecomapp.Customer.sports"
         android:label="Sports"
         tools:layout="@layout/fragment_sports" />
     <fragment
         android:id="@+id/Books"
-        android:name="com.example.ecomapp.ui.Books"
+        android:name="com.example.ecomapp.Customer.Books"
         android:label="Books"
         tools:layout="@layout/fragment_books" />
     <fragment
         android:id="@+id/history"
-        android:name="com.example.ecomapp.ui.char_history"
+        android:name="com.example.ecomapp.Customer.char_history"
         android:label="History"
         tools:layout="@layout/fragment_char_history" />
     <fragment
         android:id="@+id/notification"
-        android:name="com.example.ecomapp.ui.notification"
+        android:name="com.example.ecomapp.Customer.notification"
         android:label="Notification"
         tools:layout="@layout/fragment_notification" />
     <fragment
         android:id="@+id/account"
-        android:name="com.example.ecomapp.ui.account"
+        android:name="com.example.ecomapp.Customer.account"
         android:label="Profile"
         tools:layout="@layout/fragment_account" />
 

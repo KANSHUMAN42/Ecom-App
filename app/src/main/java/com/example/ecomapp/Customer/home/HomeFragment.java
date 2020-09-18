@@ -1,4 +1,4 @@
-package com.example.ecomapp.ui.home;
+package com.example.ecomapp.Customer.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

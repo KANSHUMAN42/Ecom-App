@@ -9,23 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".Admin.Admin"
-            android:label="@string/title_activity_admin"></activity>
-        <activity android:name=".loginRegister.Register" />
-        <activity
-            android:name=".loginRegister.Login"
-            android:label="@string/app_name">
+        <activity android:name=".loginRegister.Splash_firstActivity"
+            android:label="@string/app_name"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".TestActivity" />
+        <activity
+            android:name=".loginRegister.Login"
+            android:label="@string/app_name">
+
         </activity>
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".Admin.Admin"
+            android:label="Adminactivity" />
+        <activity android:name=".loginRegister.Register" />
+        <activity
+            android:name=".Customer.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

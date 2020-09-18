@@ -1,4 +1,4 @@
-package com.example.ecomapp.ui;
+package com.example.ecomapp.Customer;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.ecomapp.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Beauty#newInstance} factory method to
+ * Use the {@link char_history#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Beauty extends Fragment {
+public class char_history extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class Beauty extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Beauty() {
+    public char_history() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class Beauty extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Beauty.
+     * @return A new instance of fragment char_history.
      */
     // TODO: Rename and change types and number of parameters
-    public static Beauty newInstance(String param1, String param2) {
-        Beauty fragment = new Beauty();
+    public static char_history newInstance(String param1, String param2) {
+        char_history fragment = new char_history();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class Beauty extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_beauty, container, false);
+        return inflater.inflate(R.layout.fragment_char_history, container, false);
     }
 }

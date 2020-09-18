@@ -1,20 +1,19 @@
-package com.example.ecomapp.ui;
+package com.example.ecomapp;
 
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.fragment.app.Fragment;
-
-import com.example.ecomapp.R;
-
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Television#newInstance} factory method to
+ * Use the {@link Admin_account#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Television extends Fragment {
+public class Admin_account extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +24,7 @@ public class Television extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Television() {
+    public Admin_account() {
         // Required empty public constructor
     }
 
@@ -35,11 +34,11 @@ public class Television extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Television.
+     * @return A new instance of fragment Admin_account.
      */
     // TODO: Rename and change types and number of parameters
-    public static Television newInstance(String param1, String param2) {
-        Television fragment = new Television();
+    public static Admin_account newInstance(String param1, String param2) {
+        Admin_account fragment = new Admin_account();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,6 +59,6 @@ public class Television extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_television, container, false);
+        return inflater.inflate(R.layout.fragment_admin_account, container, false);
     }
 }

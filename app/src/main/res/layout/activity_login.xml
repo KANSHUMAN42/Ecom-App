@@ -19,7 +19,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imglapp"
+        android:layout_below="@id/imglapp"
         android:layout_centerHorizontal="true"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -27,31 +27,28 @@
         android:text="Ecomm App"/>
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="34dp"
         android:id="@+id/tvlemail"
-        android:hint="Email"
-        android:textSize="16dp"
-        android:textAlignment="textStart"
-        android:background="@drawable/textviewborder"
-        android:textStyle="bold"
-        android:layout_marginLeft="40dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="255dp"
-        />
-    <EditText
         android:layout_width="match_parent"
         android:layout_height="34dp"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:id="@+id/tvlpassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="255dp"
         android:background="@drawable/textviewborder"
-        android:textStyle="bold"
-        android:textSize="16dp"
+        android:hint="phone No"
+        android:textAlignment="textStart"
+        android:textSize="16dp" />
+    <EditText
+        android:id="@+id/tvlpassword"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="335dp"
-        />
+        android:background="@drawable/textviewborder"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textSize="16dp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnlogin"
@@ -64,12 +61,11 @@
         android:background="@drawable/bbgback"
         android:text="@string/login" />
 <com.google.android.material.checkbox.MaterialCheckBox
+    android:id="@+id/check"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="387dp"
     android:layout_marginLeft="45dp"
-    android:id="@+id/check"
-    />
+    android:layout_marginTop="387dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

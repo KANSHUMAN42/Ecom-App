@@ -1,4 +1,4 @@
-package com.example.ecomapp.ui;
+package com.example.ecomapp.Customer;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.ecomapp.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Furniture#newInstance} factory method to
+ * Use the {@link Toys#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Furniture extends Fragment {
+public class Toys extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class Furniture extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Furniture() {
+    public Toys() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class Furniture extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Furniture.
+     * @return A new instance of fragment Toys.
      */
     // TODO: Rename and change types and number of parameters
-    public static Furniture newInstance(String param1, String param2) {
-        Furniture fragment = new Furniture();
+    public static Toys newInstance(String param1, String param2) {
+        Toys fragment = new Toys();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class Furniture extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_furniture, container, false);
+        return inflater.inflate(R.layout.fragment_toys, container, false);
     }
 }
