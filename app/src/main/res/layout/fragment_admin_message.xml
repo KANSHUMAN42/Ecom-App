@@ -3,12 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin_message">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Admin.ui.admin_message">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:background = "@color/colorPrimary"
+            android:layout_width = "match_parent"
+            app:title="Orders"
+            android:layout_height = "?attr/actionBarSize"
+            app:layout_scrollFlags = "scroll|snap|enterAlways"
+            app:theme = "@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme = "@style/ThemeOverlay.AppCompat.Light" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        >
+        
+    </RelativeLayout>
 
 </FrameLayout>

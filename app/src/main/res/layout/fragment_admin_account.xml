@@ -1,14 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin_account">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Admin.ui.Admin_account">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width = "match_parent"
+        android:id="@+id/aa_toolbar"
+        android:layout_height = "wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:background = "@color/colorPrimary"
+            android:layout_width = "match_parent"
+            app:title="Account Details"
+            android:layout_height = "?attr/actionBarSize"
+            app:layout_scrollFlags = "scroll|snap|enterAlways"
+            app:theme = "@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme = "@style/ThemeOverlay.AppCompat.Light" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_account"
+        app:civ_border_width="2dp"
+        android:layout_below="@id/aa_toolbar"
+        android:id="@+id/aa_img1"
+        android:layout_margin="5dp"
+        android:layout_centerHorizontal="true"
+        app:civ_border_color="#FF000000"/>
 
-</FrameLayout>
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aa_img1"
+        android:id="@+id/aa_name"
+        android:layout_margin="5dp"
+        android:hint="Name"/>
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aa_name"
+        android:id="@+id/aa_shopname"
+        android:hint="shop name"
+        android:layout_margin="5dp"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:id="@+id/aa_balance"
+        android:textSize="16dp"
+        android:layout_below="@id/aa_shopname"
+        android:text="Total Bakance"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aa_shopname"
+        android:textSize="20sp"
+        android:id="@+id/aa_balanceprice"
+        android:layout_toEndOf="@id/aa_balance"
+        android:text="00"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="145dp"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aa_balance"
+        android:textSize="20sp"
+        android:id="@+id/aa_cordernumber"
+        android:layout_toEndOf="@id/aa_balance"
+        android:text="00"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="145dp"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/aa_corder"
+        android:textSize="16dp"
+        android:layout_below="@id/aa_balance"
+        android:text="Total Bakance"/>
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="50dp"
+   android:layout_below="@id/aa_corder"
+    android:id="@+id/btn_save"
+    android:layout_marginTop="30dp"
+    android:text="Edit"
+    />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/btn_save"
+        android:id="@+id/btn_logout"
+        android:layout_marginTop="30dp"
+        android:text="LOG OUT"
+        />
+
+
+
+
+</RelativeLayout>

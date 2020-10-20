@@ -94,7 +94,6 @@ Button btnregister,btnlogin,btnadminlogin;
 
     }
     public void verifyuserlogin(final String Number,final String pass){
-        final String userhai="yes";
 
         if(rememberme.isChecked()){
             Paper.book().write(prevalent.userphonekey,Number);
@@ -112,6 +111,8 @@ Button btnregister,btnlogin,btnadminlogin;
                     if(userdetails.getNumber().equals(Number) && userdetails.getPassword().equals(pass)){
                         Intent i=new  Intent(getApplicationContext(),MainActivity.class);
                         startActivity(i);
+                        finish();
+
                     }else{
                         Toast.makeText(Login.this,"Reenter details",Toast.LENGTH_SHORT).show();
                     }

@@ -8,22 +8,29 @@
 
     <fragment
         android:id="@+id/admin_nav_home"
-        android:name="com.example.ecomapp.admin_nav_home"
+        android:name="com.example.ecomapp.Admin.ui.admin_nav_home"
         android:label="fragment_admin_nav_home"
-        tools:layout="@layout/fragment_admin_nav_home" />
+        tools:layout="@layout/fragment_admin_nav_home" >
+
+    </fragment>
     <fragment
         android:id="@+id/admin_message"
-        android:name="com.example.ecomapp.admin_message"
+        android:name="com.example.ecomapp.Admin.ui.admin_message"
         android:label="fragment_admin_message"
         tools:layout="@layout/fragment_admin_message" />
     <fragment
         android:id="@+id/admin_notification"
-        android:name="com.example.ecomapp.admin_notification"
+        android:name="com.example.ecomapp.Admin.ui.admin_notification"
         android:label="fragment_admin_notification"
         tools:layout="@layout/fragment_admin_notification" />
     <fragment
         android:id="@+id/admin_account"
-        android:name="com.example.ecomapp.Admin_account"
+        android:name="com.example.ecomapp.Admin.ui.Admin_account"
         android:label="fragment_admin_account"
         tools:layout="@layout/fragment_admin_account" />
+    <fragment
+        android:id="@+id/additems"
+        android:name="com.example.ecomapp.Admin.ui.Additems"
+        android:label="fragment_additems"
+        tools:layout="@layout/fragment_additems" />
 </navigation>

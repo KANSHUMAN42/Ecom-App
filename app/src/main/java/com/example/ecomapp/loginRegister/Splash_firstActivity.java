@@ -32,7 +32,8 @@ public class Splash_firstActivity extends AppCompatActivity {
         splash_button =findViewById(R.id.btn_splash_enter);
         pgbar=findViewById(R.id.pgbar);
       Paper.init(this);
-      Paper.book().destroy();
+      //Paper.book().destroy();
+        pgbar.setVisibility(View.GONE);
         String userphonenum= Paper.book().read(prevalent.userphonekey);
         String userpassword=Paper.book().read(prevalent.userpassword);
         if(userphonenum !="" && userpassword != ""){
@@ -48,7 +49,9 @@ public class Splash_firstActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i=new Intent(getApplicationContext(),Login.class);
                 startActivity(i);
+                finish();
                 pgbar.setVisibility(View.VISIBLE);
+
             }
         });
 
@@ -100,6 +103,7 @@ public class Splash_firstActivity extends AppCompatActivity {
                         pgbar.setVisibility(View.GONE);
                         Intent i=new  Intent(getApplicationContext(), MainActivity.class);
                         startActivity(i);
+                        finish();
 
                     }else{
                         Toast.makeText(getApplicationContext(),"Reenter details",Toast.LENGTH_SHORT).show();

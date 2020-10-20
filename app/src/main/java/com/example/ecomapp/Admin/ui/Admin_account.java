@@ -1,4 +1,4 @@
-package com.example.ecomapp;
+package com.example.ecomapp.Admin.ui;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.ecomapp.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,6 +55,8 @@ public class Admin_account extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override

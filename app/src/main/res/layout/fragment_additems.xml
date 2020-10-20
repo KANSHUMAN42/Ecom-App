@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Admin.ui.Additems">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:background = "@color/colorPrimary"
+            android:layout_width = "match_parent"
+            app:title="Add Items"
+            android:layout_height = "?attr/actionBarSize"
+            app:layout_scrollFlags = "scroll|snap|enterAlways"
+            app:theme = "@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme = "@style/ThemeOverlay.AppCompat.Light" />
+    </com.google.android.material.appbar.AppBarLayout>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="55dp"
+    android:layout_marginBottom="55dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/img_admin_addpic"
+            android:scaleType="fitXY"
+            android:src="@drawable/add_image_icon"/>
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_catogry"
+            android:layout_below="@id/img_admin_addpic"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="15dp"/>
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_subcatogry"
+            android:layout_below="@id/item_catogry"
+            android:layout_centerHorizontal="true"
+            android:hint="subcatogry"
+            android:textSize="16sp"/>
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_price"
+            android:layout_below="@id/item_subcatogry"
+            android:hint="price inNumber"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="15dp"
+            android:inputType="numberDecimal"/>
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_count"
+            android:layout_below="@id/item_price"
+            android:inputType="number"
+            android:hint="Number of items in stock"
+            android:layout_centerHorizontal="true"/>
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_discription"
+            android:layout_below="@id/item_count"
+            android:hint="Product discription"
+            android:layout_centerHorizontal="true"/>
+
+            <Button
+                android:layout_width="170dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/item_discription"
+                android:layout_centerHorizontal="true"
+                android:text="Add Item"
+                android:background="#c0eeb0"
+                android:layout_margin="15dp"
+                android:id="@+id/item_addbtn"/>
+
+
+
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
+
+</FrameLayout>

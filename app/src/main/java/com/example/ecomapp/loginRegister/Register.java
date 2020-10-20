@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.ecomapp.Customer.MainActivity;
 import com.example.ecomapp.R;
 import com.example.ecomapp.TestActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -64,7 +65,7 @@ public class Register extends AppCompatActivity {
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
                                // Toast.makeText(getApplicationContext(),"Registration copleted successfully",Toast.LENGTH_SHORT).show();
-                                Intent i=new Intent(Register.this, TestActivity.class);
+                                Intent i=new Intent(Register.this, MainActivity.class);
                                 startActivity(i);
                             }else{
 
