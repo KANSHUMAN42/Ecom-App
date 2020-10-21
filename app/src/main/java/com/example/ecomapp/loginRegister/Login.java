@@ -27,12 +27,11 @@ import com.google.firebase.database.ValueEventListener;
 import io.paperdb.Paper;
 
 public class Login extends AppCompatActivity {
-Button btnregister,btnlogin,btnadminlogin;
+Button btnregister,btnlogin;
     EditText tvemail,tvlpassword;
     ProgressBar Progressbar;
     CheckBox rememberme;
 
-    static boolean isuser=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,28 +44,15 @@ Button btnregister,btnlogin,btnadminlogin;
        rememberme=findViewById(R.id.check);
 
        Paper.init(this);
-       btnadminlogin=findViewById(R.id.btnadminlogin);
         btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i=new Intent(getApplicationContext(),Register.class);
                 startActivity(i);
+
             }
         });
-        btnadminlogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(isuser) {
-                    btnlogin.setText(R.string.Admin_login);
-                    btnadminlogin.setText("User?");
-                    isuser=false;
-                }else{
-                    btnlogin.setText("Users Login");
-                    btnadminlogin.setText("Admin?");
-                    isuser=true;
-                }
-            }
-        });
+
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,12 +67,10 @@ Button btnregister,btnlogin,btnadminlogin;
                     Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(isuser){
+                else{
                     Progressbar.setVisibility(View.VISIBLE);
                     verifyuserlogin(Number,password);
-                }else{
-                    Progressbar.setVisibility(View.VISIBLE);
-                    verifyadminlogin(Number,password);
+                    Progressbar.setVisibility(View.GONE);
                 }
 
     }
@@ -130,34 +114,6 @@ Button btnregister,btnlogin,btnadminlogin;
     }
 
 
-    public void verifyadminlogin(final String Number, final String pass){
-         // FirebaseDatabase firebaseDatabase;
 
-
-
-          final DatabaseReference rootref=FirebaseDatabase.getInstance().getReference();
-          rootref.addListenerForSingleValueEvent(new ValueEventListener() {
-              @Override
-              public void onDataChange(@NonNull DataSnapshot snapshot) {
-                  if(snapshot.child("Admins").child(Number).exists()){
-                   Userdetails userdetails=snapshot.child("Admins").child(Number).getValue(Userdetails.class);
-                   if(userdetails.getNumber().equals(Number) && userdetails.getPassword().equals(pass)){
-                       Intent i=new  Intent(getApplicationContext(), Admin.class);
-                       startActivity(i);
-                   }else{
-                       Toast.makeText(Login.this,"Reenter details",Toast.LENGTH_SHORT).show();
-                   }
-                  }
-                  else{
-                      Toast.makeText(Login.this,"acaount with this number doesnot exists",Toast.LENGTH_SHORT).show();
-                  }
-              }
-
-              @Override
-              public void onCancelled(@NonNull DatabaseError error) {
-
-              }
-          });
-    }
 
 }

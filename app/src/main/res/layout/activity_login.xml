@@ -76,17 +76,7 @@
         android:layout_toRightOf="@id/check"
         android:layout_marginTop="390dp"
         android:layout_marginLeft="2dp"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:text="Admin login?"
-        android:id="@+id/btnadminlogin"
-        android:textColor="@color/colorPrimary"
-        android:background="@drawable/textviewborder"
-        android:layout_below="@id/btnlregister"
-        android:layout_marginTop="10dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="15dp"/>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="40dp"

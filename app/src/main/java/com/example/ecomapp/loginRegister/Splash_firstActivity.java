@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import io.paperdb.Paper;
 
 public class Splash_firstActivity extends AppCompatActivity {
-   Button splash_button;
+   Button splash_button,btn_adminenter;
    ProgressBar pgbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,26 +31,34 @@ public class Splash_firstActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash_first);
         splash_button =findViewById(R.id.btn_splash_enter);
         pgbar=findViewById(R.id.pgbar);
+        btn_adminenter=findViewById(R.id.btn_adminenter);
       Paper.init(this);
-      //Paper.book().destroy();
+      //Paper.book().destroy()
         pgbar.setVisibility(View.GONE);
-        String userphonenum= Paper.book().read(prevalent.userphonekey);
-        String userpassword=Paper.book().read(prevalent.userpassword);
-        if(userphonenum !="" && userpassword != ""){
-            if(!TextUtils.isEmpty(userphonenum) && !TextUtils.isEmpty(userpassword)){
-                    Allowexcess(userphonenum, userpassword);
 
-            }
-        }
 
 
         splash_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String userphonenum= Paper.book().read(prevalent.userphonekey);
+                String userpassword=Paper.book().read(prevalent.userpassword);
+                if(userphonenum !="" && userpassword != ""){
+                    if(!TextUtils.isEmpty(userphonenum) && !TextUtils.isEmpty(userpassword)){
+                        Allowexcess(userphonenum, userpassword);
+                    }
+                }
                 Intent i=new Intent(getApplicationContext(),Login.class);
                 startActivity(i);
-                finish();
-                pgbar.setVisibility(View.VISIBLE);
+
+
+            }
+        });
+        btn_adminenter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(getApplicationContext(),Admin_login.class);
+                startActivity(intent);
 
             }
         });
@@ -58,38 +66,7 @@ public class Splash_firstActivity extends AppCompatActivity {
 
     }
 
-//    private void AdimAllowexcess(final String Number,final  String pass) {
-//
-//        final DatabaseReference rootref= FirebaseDatabase.getInstance().getReference();
-//        rootref.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if(snapshot.child("users").exists()){
-//                    Userdetails userdetails=snapshot.child("Admins").child(Number).getValue(Userdetails.class);
-//                    assert userdetails != null;
-//                    if(userdetails.getNumber().equals(Number) && userdetails.getPassword().equals(pass)){
-//                        pgbar.setVisibility(View.GONE);
-//                        Intent i=new  Intent(getApplicationContext(), MainActivity.class);
-//                        startActivity(i);
-//
-//                    }else{
-//                        Toast.makeText(getApplicationContext(),"Reenter details",Toast.LENGTH_SHORT).show();
-//                    }
-//                }
-//                else{
-//                    Toast.makeText(getApplicationContext(),"acaount with this number doesnot exists",Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//    }
-//
     private void Allowexcess(final String Number, final String pass) {
-
 
 
         final DatabaseReference rootref= FirebaseDatabase.getInstance().getReference();
@@ -106,11 +83,13 @@ public class Splash_firstActivity extends AppCompatActivity {
                         finish();
 
                     }else{
-                        Toast.makeText(getApplicationContext(),"Reenter details",Toast.LENGTH_SHORT).show();
+                        Intent i=new Intent(getApplicationContext(),Login.class);
+                        startActivity(i);
                     }
                 }
                 else{
-                    Toast.makeText(getApplicationContext(),"acaount with this number doesnot exists",Toast.LENGTH_SHORT).show();
+                    Intent i=new Intent(getApplicationContext(),Login.class);
+                    startActivity(i);
                 }
             }
 
