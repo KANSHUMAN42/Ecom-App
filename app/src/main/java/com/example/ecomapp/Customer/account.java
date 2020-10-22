@@ -13,6 +13,8 @@ import com.example.ecomapp.R;
 import com.example.ecomapp.loginRegister.Login;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Objects;
+
 import io.paperdb.Paper;
 
 /**
@@ -76,9 +78,10 @@ public class account extends Fragment {
             @Override
             public void onClick(View view) {
                 Paper.book().destroy();
-
                 Intent i=new Intent(getActivity(), Login.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(i);
+                requireActivity().finish();
 
             }
         });

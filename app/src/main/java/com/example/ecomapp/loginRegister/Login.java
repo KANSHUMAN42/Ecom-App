@@ -49,26 +49,29 @@ Button btnregister,btnlogin;
             public void onClick(View view) {
                 Intent i=new Intent(getApplicationContext(),Register.class);
                 startActivity(i);
+                finish();
 
             }
         });
 
-
+        Progressbar.setVisibility(View.GONE);
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Progressbar.setVisibility(view.VISIBLE);
                 String Number=tvemail.getText().toString();
                  String password= tvlpassword.getText().toString();
                 if(TextUtils.isEmpty(Number)){
                     Toast.makeText(getApplicationContext(),"Enter Email",Toast.LENGTH_SHORT).show();
+                    Progressbar.setVisibility(View.GONE);
                     return ;
                 }
                 if (TextUtils.isEmpty(password)) {
                     Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                    Progressbar.setVisibility(View.GONE);
                     return;
                 }
                 else{
-                    Progressbar.setVisibility(View.VISIBLE);
                     verifyuserlogin(Number,password);
                     Progressbar.setVisibility(View.GONE);
                 }
@@ -102,7 +105,7 @@ Button btnregister,btnlogin;
                     }
                 }
                 else{
-                    Toast.makeText(Login.this,"acaount with this number doesnot exists",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this,"account with this number doesnot exists",Toast.LENGTH_SHORT).show();
                 }
             }
 

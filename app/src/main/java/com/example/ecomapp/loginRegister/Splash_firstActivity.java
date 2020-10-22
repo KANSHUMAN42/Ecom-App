@@ -32,7 +32,7 @@ public class Splash_firstActivity extends AppCompatActivity {
         splash_button =findViewById(R.id.btn_splash_enter);
         pgbar=findViewById(R.id.pgbar);
         btn_adminenter=findViewById(R.id.btn_adminenter);
-      Paper.init(this);
+        Paper.init(this);
       //Paper.book().destroy()
         pgbar.setVisibility(View.GONE);
 
@@ -41,16 +41,20 @@ public class Splash_firstActivity extends AppCompatActivity {
         splash_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String userphonenum= Paper.book().read(prevalent.userphonekey);
                 String userpassword=Paper.book().read(prevalent.userpassword);
-                if(userphonenum !="" && userpassword != ""){
-                    if(!TextUtils.isEmpty(userphonenum) && !TextUtils.isEmpty(userpassword)){
+                    if(!TextUtils.isEmpty(userphonenum) || !TextUtils.isEmpty(userpassword)){
                         Allowexcess(userphonenum, userpassword);
-                    }
-                }
-                Intent i=new Intent(getApplicationContext(),Login.class);
-                startActivity(i);
+                        pgbar.setVisibility(View.GONE);
 
+                }else {
+                    Intent i = new Intent(getApplicationContext(), Login.class);
+                    //i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(i);
+                  //  finish();
+
+                }
 
             }
         });
@@ -79,17 +83,16 @@ public class Splash_firstActivity extends AppCompatActivity {
                     if(userdetails.getNumber().equals(Number) && userdetails.getPassword().equals(pass)){
                         pgbar.setVisibility(View.GONE);
                         Intent i=new  Intent(getApplicationContext(), MainActivity.class);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(i);
                         finish();
 
                     }else{
-                        Intent i=new Intent(getApplicationContext(),Login.class);
-                        startActivity(i);
+                       Toast.makeText(getApplicationContext(),"Error in verifying",Toast.LENGTH_SHORT).show();
                     }
                 }
                 else{
-                    Intent i=new Intent(getApplicationContext(),Login.class);
-                    startActivity(i);
+                    Toast.makeText(getApplicationContext(),"Error in verifying",Toast.LENGTH_SHORT).show();
                 }
             }
 

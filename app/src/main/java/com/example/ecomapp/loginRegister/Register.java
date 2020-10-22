@@ -49,7 +49,6 @@ public class Register extends AppCompatActivity {
             public void onClick(View view) {
                 rootnode = FirebaseDatabase.getInstance();
                 reference = rootnode.getReference("users");
-
                 String name = tvname.getText().toString();
                 String email = tvemail.getText().toString();
                 String password = tvcpassword.getText().toString();
@@ -58,6 +57,7 @@ public class Register extends AppCompatActivity {
                 //create user in database
                 if (name.isEmpty() || email.isEmpty() || password.isEmpty() || number.isEmpty() || username.isEmpty()) {
                     tvname.setText("No field to remain empty");
+                    return;
                 } else {
                     Userdetails userdetails = new Userdetails(name, email, number, password,username);
                     reference.child(number).setValue(userdetails).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -67,6 +67,8 @@ public class Register extends AppCompatActivity {
                                // Toast.makeText(getApplicationContext(),"Registration copleted successfully",Toast.LENGTH_SHORT).show();
                                 Intent i=new Intent(Register.this, MainActivity.class);
                                 startActivity(i);
+                                finish();
+                                Toast.makeText(getApplicationContext(),"Registration completed",Toast.LENGTH_SHORT).show();
                             }else{
 
                                 Toast.makeText(getApplicationContext(),"Registration Failed",Toast.LENGTH_SHORT).show();
